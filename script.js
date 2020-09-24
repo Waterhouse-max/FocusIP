@@ -52,11 +52,14 @@ function hideOuts(){
 	if(document.getElementsByClassName("no_image")[0]){
 		heightFix();
 	}
+	if(document.getElementsByClassName("imageCell")!=null){
+		imageFix();
+	}
 }
 
 function heightFix(){ //used to make the height of a tr without an image the same as the other trs
 	
-	row= document.getElementsByClassName("no_imagne")[0];
+	row= document.getElementsByClassName("no_image")[0];
 	//imageCells= document.getElementsByClassName("imageCell");
 	if (row!=null){
 		console.log(row);
@@ -64,35 +67,27 @@ function heightFix(){ //used to make the height of a tr without an image the sam
 		console.log(prevRow);
 		row.firstElementChild.style.height=prevRow;	
 	}
+
+
 	
 
 	
 
 }
 
-function imageFix(){ //used to make all cells have the same height. Most of the 'height' comes from padding but the hight values can be used to fix minor differences in height
-	imageCells= document.getElementsByClassName("imageCell");
-	var foop=document.getElementsByClassName("fuck");
-	console.log(foop);
-	if(imageCells!=null){
-		for (i=0; i<imageCells.length; i++){
+function imageFix(){ //used to make all cells have the same height. Fixes the corner case in ed_clients where the height of the image cell is 
+//less than the height of the country list		
+	var wipo=document.getElementById("wipo");
+	wipo.style.height=0; //important, the height has to be 0 at the start for the calc to work
+	wipo.style.height=wipo.nextElementSibling.offsetHeight-wipo.offsetHeight;
 
-			if(imageCells[i].nextElementSibling.getBoundingClientRect().height!=imageCells[i].getBoundingClientRect().height){
-				//console.log("happened");
-				//console.log("next height",imageCells[i].nextElementSibling.getBoundingClientRect().height, "this height",  imageCells[i].getBoundingClientRect().height)	
-				imageCells[i].style.height=0;//imageCells[i].nextElementSibling.getBoundingClientRect().height - imageCells[i].getBoundingClientRect().height;	
-				//console.log("new this height", imageCells[i].style.height)			
-			}	
-			
-		}
-	} 
 }
 
 
 
 hideOuts();
 heightFix();
-//imageFix();
+
 
 window.onresize = hideOuts;
 //window.onresize = heightFix;
@@ -115,7 +110,6 @@ function openTab(evt, tabName) { //opens the tabcontent area that corresponds to
 
 if(document.getElementById("pdf")!=null){ //if they click off a pdf link it will close
 	var pdf=document.getElementById("pdf");
-	console.log("hi");
 	window.addEventListener('click', function(e){ 
 		 
 		if(pdf.style.display=="block" & e.target.className!="pdfLink"){
