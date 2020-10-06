@@ -130,6 +130,8 @@ ul{
 	font-size: 150%;font-family: Arial, Helvetica, sans-serif;font-weight: bold; text-decoration: underline;
 }
 
+
+
 .portrait{
     width: 20%;
     height: auto;
@@ -297,7 +299,7 @@ tr:first-child th{
   width: 100%;
   position: relative;
   height: 0;
-  padding: 100% 0 0 0;
+  padding: 30% 0 0 0;
   border-right: none;
   border-bottom: 1px solid rgba(0, 0, 0, .0);
 
@@ -407,6 +409,11 @@ tr:first-child .modHead{
   padding-top: 10px;
   text-decoration: underline;
   cursor: pointer;
+}
+
+input, label {
+
+  display: block;
 }
 
 

@@ -52,7 +52,8 @@ function hideOuts(){
 	if(document.getElementsByClassName("no_image")[0]){
 		heightFix();
 	}
-	if(document.getElementsByClassName("imageCell")!=null){
+	if(document.getElementsByClassName("imageCell").length){
+		
 		imageFix();
 	}
 }
@@ -125,6 +126,34 @@ function openPdf(elem){ //Makes the iframe visible when a pdf needs to be loaded
 	pdf.attributes[0].value=elem.id;
 	pdf.style.display="block";
 		
+}
+
+function sendEmail(){
+	
+	if (document.getElementById("subject").value=="" || document.getElementById("fname").value=="" ||
+		document.getElementById("lname").value=="" || document.getElementById("company").value=="")
+	{
+		alert("One or more fields are not filled out");
+		return;
+	}
+	var email=document.getElementById("email")
+	email.attributes[0].value="mailto";
+	var subject=document.getElementById("subject").value;
+	var company=" at "+document.getElementById("company").value;
+
+
+	var string="";
+	for(var i=0; i<4; i++)
+	{
+		string+="%0d%0a";
+	}
+	var name=string+"- "+document.getElementById("fname").value+" "+document.getElementById("lname").value
+	var msg=encodeURIComponent(document.getElementById("msg").value);
+	//console.log(value);
+	//value = value.replace(' ', '%');
+	email.attributes[0].value+=":swater315@gmail.com?"+"subject="+subject+"&body="+msg+name+company;
+	setTimeout(function(){ email.attributes[0].value="#"; }, 500);
+	
 }
 
  
