@@ -151,7 +151,7 @@ function sendEmail(){
 	var msg=encodeURIComponent(document.getElementById("msg").value);
 	//console.log(value);
 	//value = value.replace(' ', '%');
-	email.attributes[0].value+=":swater315@gmail.com?"+"subject="+subject+"&body="+msg+name+company;
+	email.attributes[0].value+=":astevens@fipgllc.com?"+"subject="+subject+"&body="+msg+name+company;
 	setTimeout(function(){ email.attributes[0].value="#"; }, 500);
 	
 }
