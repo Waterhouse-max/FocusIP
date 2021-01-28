@@ -1,6 +1,6 @@
 .TopBar {
 background: rgb(227,222,217);
-background: radial-gradient(circle, rgba(227,222,217,1) 68%, rgba(233,40,40,1) 100%);
+background: radial-gradient(circle, rgba(227,222,217,1) 71%, rgba(233,40,40,1) 100%);
 height: 200px;
 width: 100%;
 position: relative;
@@ -14,7 +14,6 @@ height: 100%;
 margin: 0px;
 padding: 0px;
 overflow: hidden;
-
 
 }
 
@@ -245,17 +244,12 @@ ul{
   padding-top: 10px;
 }
 
-.foo {
-    word-wrap: break-word;         /* All browsers since IE 5.5+ */
-    overflow-wrap: break-word;     /* Renamed property in CSS3 draft spec */
-    width: 100%;
-}
 
 .rep {
   border-bottom: 2px solid #e01537;
 
 }
-/* #af576f*/ /*#e01537 text-decoration: underline #b0701c*/
+
 
 .repList{
   padding-bottom: 20px;
@@ -291,7 +285,6 @@ tr:first-child th{
   font-size: 32px;
   text-decoration: underline;
 }
-
 
 
 .imageCell {
@@ -365,7 +358,6 @@ td, th {
   white-space: nowrap;
   padding-bottom: 10px;
       
-
 }
 
 .long:hover {
@@ -374,9 +366,7 @@ td, th {
 
 .long::-webkit-scrollbar {
   display: none;
-  padding-top: 30px;
-
-  
+  padding-top: 30px; 
 
 }
 
@@ -416,6 +406,54 @@ input, label {
   display: block;
 }
 
+.arrowbox{
+  width: 140px;
+  height: 40px;
+  background-color:black;
+  position: relative;
+  border-style:solid;
+  display: table-cell;
+  vertical-align: middle;
+  float: left;
+  margin-right: 30px;
+}
+
+.arrowbox:after {
+  left: 100%;
+  top: -1px;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-style:solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-left-color: black;
+  border-width: 21px;
+  
+}
+
+.arrowbox > p {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  line-height: 4px;
+  
+}
+
+.contactbox {
+  margin-left: 20px;
+  position: relative;
+  top: 4px;
+  padding-bottom: 4px;
+  height: 40px;
+}
+
+.contactdiv {
+  display: table;
+  margin: auto;
+  padding-bottom: 10px;
+  
+}
 
 
 

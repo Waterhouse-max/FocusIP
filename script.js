@@ -5,8 +5,6 @@ var i;
 var row;
 var imageCells;
 
-
-
 var array= document.getElementsByClassName("dropdown");
 
 
@@ -68,10 +66,6 @@ function heightFix(){ //used to make the height of a tr without an image the sam
 		console.log(prevRow);
 		row.firstElementChild.style.height=prevRow;	
 	}
-
-
-	
-
 	
 
 }
@@ -91,7 +85,6 @@ heightFix();
 
 
 window.onresize = hideOuts;
-//window.onresize = heightFix;
 
 function openTab(evt, tabName) { //opens the tabcontent area that corresponds to a tab on pages that have the red tab area
   var i, tabcontent, tablinks;
@@ -149,8 +142,6 @@ function sendEmail(){
 	}
 	var name=string+"- "+document.getElementById("fname").value+" "+document.getElementById("lname").value
 	var msg=encodeURIComponent(document.getElementById("msg").value);
-	//console.log(value);
-	//value = value.replace(' ', '%');
 	email.attributes[0].value+=":astevens@fipgllc.com?"+"subject="+subject+"&body="+msg+name+company;
 	setTimeout(function(){ email.attributes[0].value="#"; }, 500);
 	
